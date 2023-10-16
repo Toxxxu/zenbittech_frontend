@@ -12,11 +12,17 @@ import { AuthText } from '../../texts/auth-text.component';
 import { StandardText } from '../../texts/standard-text.component';
 import { ForgotPasswordLink, StyledLink } from '../../links/auth-link.component';
 import { AuthContainer } from '../../containers/auth-container.component';
+import { LogoBox } from '../../boxes/logo-box.component';
+import { Logo } from '../../logos/logo.component';
 
 const LoginForm: React.FC = () => {
   return (
     <>
-      <Header />
+      <Header>
+        <LogoBox>
+          <Logo>TRULY</Logo>
+        </LogoBox>
+      </Header>
       <AuthContainer>
         <LoginLeftPanel />
         <LoginRightPanel>

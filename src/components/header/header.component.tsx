@@ -5,5 +5,8 @@ export const Header = styled.div`
   height: 50px;
   background-color: #172234;
   flex-shrink: 0;
-  box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.06), 0px 2px 10px 0px rgba(0, 0, 0, 0.10);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
 `;
