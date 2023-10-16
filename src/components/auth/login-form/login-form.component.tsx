@@ -7,7 +7,7 @@ import { LoginBox } from '../../boxes/login-box.component';
 import { Header } from '../../header/header.component';
 import { InputBox } from '../../boxes/input-box.component';
 import { AuthInput } from '../../inputs/auth-input.component';
-import { SignInButton } from '../../buttons/signin-button.component';
+import { AuthButton } from '../../buttons/auth-button.component';
 import { AuthText } from '../../texts/auth-text.component';
 import { StandardText } from '../../texts/standard-text.component';
 import { ForgotPasswordLink, StyledLink } from '../../links/auth-link.component';
@@ -52,7 +52,7 @@ const LoginForm: React.FC = () => {
               />
             </InputBox>
             <ForgotPasswordLink>Forgot password?</ForgotPasswordLink>
-            <SignInButton>Sign In</SignInButton>
+            <AuthButton>Sign In</AuthButton>
             <StandardText>Don't have account? <StyledLink to="/signup">Sign Up</StyledLink></StandardText>
           </LoginBox>
         </LoginRightPanel>

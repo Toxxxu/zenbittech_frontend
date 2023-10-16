@@ -7,7 +7,7 @@ import { LoginBox } from '../../boxes/login-box.component';
 import { Header } from '../../header/header.component';
 import { InputBox } from '../../boxes/input-box.component';
 import { AuthInput } from '../../inputs/auth-input.component';
-import { SignInButton } from '../../buttons/signin-button.component';
+import { AuthButton } from '../../buttons/auth-button.component';
 import { AuthText } from '../../texts/auth-text.component';
 import { StandardText } from '../../texts/standard-text.component';
 import { StyledLink } from '../../links/auth-link.component';
@@ -51,7 +51,7 @@ const SignupForm: React.FC = () => {
                 autoComplete="current-password"
               />
             </InputBox>
-            <SignInButton>Sign Up</SignInButton>
+            <AuthButton>Sign Up</AuthButton>
             <StandardText>Have an account? <StyledLink to="/login">Login</StyledLink></StandardText>
           </LoginBox>
         </LoginRightPanel>
