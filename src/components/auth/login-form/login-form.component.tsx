@@ -11,7 +11,7 @@ import { AuthButton } from '../../buttons/auth-button.component';
 import { AuthText } from '../../texts/auth-text.component';
 import { StandardText } from '../../texts/standard-text.component';
 import { ForgotPasswordLink, StyledLink } from '../../links/auth-link.component';
-import { AuthContainer } from '../../containers/auth-container.component';
+import { Container } from '../../containers/container.component';
 import { LogoBox } from '../../boxes/logo-box.component';
 import { Logo } from '../../logos/logo.component';
 
@@ -23,7 +23,7 @@ const LoginForm: React.FC = () => {
         <Logo to="/">LOGO</Logo>
         </LogoBox>
       </Header>
-      <AuthContainer>
+      <Container>
         <LoginLeftPanel />
         <LoginRightPanel>
           <LoginBox>
@@ -56,7 +56,7 @@ const LoginForm: React.FC = () => {
             <StandardText>Don't have account? <StyledLink to="/signup">Sign Up</StyledLink></StandardText>
           </LoginBox>
         </LoginRightPanel>
-      </AuthContainer>
+      </Container>
     </>
   )
 }

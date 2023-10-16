@@ -18,3 +18,8 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   color: #B29F7E;
 `;
+
+export const ButtonLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+`
