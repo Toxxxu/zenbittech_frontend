@@ -20,7 +20,7 @@ const SignupForm: React.FC = () => {
     <>
       <Header>
         <LogoBox>
-          <Logo>TRULY</Logo>
+          <Logo to="/">LOGO</Logo>
         </LogoBox>
       </Header>
       <AuthContainer>
