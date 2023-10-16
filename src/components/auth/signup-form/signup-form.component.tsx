@@ -10,10 +10,10 @@ import { AuthInput } from '../../inputs/auth-input.component';
 import { SignInButton } from '../../buttons/signin-button.component';
 import { AuthText } from '../../texts/auth-text.component';
 import { StandardText } from '../../texts/standard-text.component';
-import { ForgotPasswordLink, StyledLink } from '../../links/auth-link.component';
+import { StyledLink } from '../../links/auth-link.component';
 import { AuthContainer } from '../../containers/auth-container.component';
 
-const LoginForm: React.FC = () => {
+const SignupForm: React.FC = () => {
   return (
     <>
       <Header />
@@ -21,7 +21,7 @@ const LoginForm: React.FC = () => {
         <LoginLeftPanel />
         <LoginRightPanel>
           <LoginBox>
-            <LoginTitle>Login</LoginTitle>
+            <LoginTitle>Sign Up</LoginTitle>
             <InputBox>
               <AuthText>Email</AuthText>
               <AuthInput
@@ -45,9 +45,8 @@ const LoginForm: React.FC = () => {
                 autoComplete="current-password"
               />
             </InputBox>
-            <ForgotPasswordLink>Forgot password?</ForgotPasswordLink>
-            <SignInButton>Sign In</SignInButton>
-            <StandardText>Don't have account? <StyledLink to="/signup">Sign Up</StyledLink></StandardText>
+            <SignInButton>Sign Up</SignInButton>
+            <StandardText>Have an account? <StyledLink to="/login">Login</StyledLink></StandardText>
           </LoginBox>
         </LoginRightPanel>
       </AuthContainer>
@@ -55,4 +54,4 @@ const LoginForm: React.FC = () => {
   )
 }
 
-export { LoginForm };
+export { SignupForm };

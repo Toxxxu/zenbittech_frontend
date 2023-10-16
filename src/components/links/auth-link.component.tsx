@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const ForgotPasswordLink = styled.p`
@@ -9,11 +10,11 @@ export const ForgotPasswordLink = styled.p`
   color: #B29F7E;
 `;
 
-export const SignUpLink = styled.a`
+export const StyledLink = styled(Link)`
   font-family: Lato;
   font-size: 14px;
   line-height: 22px;
   letter-spacing: 0px;
-  color: #B29F7E;
   text-decoration: none;
+  color: #B29F7E;
 `;
