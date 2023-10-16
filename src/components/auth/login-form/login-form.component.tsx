@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import { LoginLeftPanel } from '../../panels/login-left-panel.component';
 import { LoginRightPanel } from '../../panels/login-right-panel.component';
@@ -12,11 +11,7 @@ import { SignInButton } from '../../buttons/signin-button.component';
 import { AuthText } from '../../texts/auth-text.component';
 import { StandardText } from '../../texts/standard-text.component';
 import { ForgotPasswordLink, SignUpLink } from '../../links/auth-link.component';
-
-const Container = styled.div`
-  display: flex;
-  height: 733px;
-`;
+import { Container } from '../../containers/container.component';
 
 const LoginForm: React.FC = () => {
   return (
