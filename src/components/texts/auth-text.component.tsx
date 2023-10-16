@@ -5,6 +5,7 @@ export const AuthText = styled.p`
   font-size: 14px;
   font-weight: 700;
   line-height: 20px;
+  font-style: normal;
   letter-spacing: 0px;
   text-align: left;
   margin: 0;

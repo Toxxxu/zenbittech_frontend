@@ -4,7 +4,7 @@ import { LoginLeftPanel } from '../../panels/login-left-panel.component';
 import { LoginRightPanel } from '../../panels/login-right-panel.component';
 import { LoginTitle } from '../../titles/login-title.component';
 import { LoginBox } from '../../boxes/login-box.component';
-import { LoginHeader } from '../../header/login-header.component';
+import { Header } from '../../header/header.component';
 import { InputBox } from '../../boxes/input-box.component';
 import { AuthInput } from '../../inputs/auth-input.component';
 import { SignInButton } from '../../buttons/signin-button.component';
@@ -16,7 +16,7 @@ import { Container } from '../../containers/container.component';
 const LoginForm: React.FC = () => {
   return (
     <>
-      <LoginHeader />
+      <Header />
       <Container>
         <LoginLeftPanel />
         <LoginRightPanel>
