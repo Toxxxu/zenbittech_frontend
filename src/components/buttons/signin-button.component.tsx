@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SignInButton = styled.button`
   width: 350px;
   height: 44px;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   background-color: #B29F7E;

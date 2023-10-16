@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
-import { LoginForm } from './components/auth/login-form/login-form.component';
+import { Routes } from './routes/routes';
 
 function App() {
   return (
-    <LoginForm />
+    <div>
+      <Routes />
+    </div>
   );
 }
 

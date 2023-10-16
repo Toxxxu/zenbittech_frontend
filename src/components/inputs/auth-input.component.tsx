@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const AuthInput = styled.input`
-  width: 350px;
+  width: 306px;
   height: 48px;
-  padding: 14px, 20px, 12px, 20px;
-  border-radius: 10px;
+  padding: 14px 20px 12px 20px;
+  border-radius: 5px;
   gap: 64px;
   justify-content: center;
   align-items: center;

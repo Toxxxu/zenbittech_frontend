@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const AuthContainer = styled.div`
   display: flex;
   height: 733px;
   background-color: #F0F6FF;

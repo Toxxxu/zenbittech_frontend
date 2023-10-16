@@ -11,13 +11,13 @@ import { SignInButton } from '../../buttons/signin-button.component';
 import { AuthText } from '../../texts/auth-text.component';
 import { StandardText } from '../../texts/standard-text.component';
 import { ForgotPasswordLink, SignUpLink } from '../../links/auth-link.component';
-import { Container } from '../../containers/container.component';
+import { AuthContainer } from '../../containers/auth-container.component';
 
 const LoginForm: React.FC = () => {
   return (
     <>
       <Header />
-      <Container>
+      <AuthContainer>
         <LoginLeftPanel />
         <LoginRightPanel>
           <LoginBox>
@@ -50,7 +50,7 @@ const LoginForm: React.FC = () => {
             <StandardText>Don't have account? <SignUpLink>Sign Up</SignUpLink></StandardText>
           </LoginBox>
         </LoginRightPanel>
-      </Container>
+      </AuthContainer>
     </>
   )
 }
