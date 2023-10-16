@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SignInButton = styled.button`
   width: 350px;
   height: 44px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   background-color: #B29F7E;
@@ -12,7 +12,7 @@ export const SignInButton = styled.button`
   font-size: 16px;
   font-weight: 700;
   line-height: 22px;
-  letter-spacing: 0px;
   text-align: center;
   color: #FFFFFF;
-`
+  border: none;
+`;

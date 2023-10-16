@@ -15,7 +15,7 @@ import { ForgotPasswordLink, SignUpLink } from '../../links/auth-link.component'
 
 const Container = styled.div`
   display: flex;
-  height: 100vh;
+  height: 733px;
 `;
 
 const LoginForm: React.FC = () => {
