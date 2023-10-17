@@ -17,6 +17,9 @@ import { Logo } from '../../logos/logo.component';
 import { useCreateUserMutation } from '../../../apis/users.api';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../../app/hooks';
+import { useLoginMutation } from '../../../apis/auth.api';
+import { User } from '../../../models/User';
+import { setAuthState } from '../../../slices/auth.slice';
 
 const SignupForm: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -24,12 +27,16 @@ const SignupForm: React.FC = () => {
   const [password, setPassword] = useState("");
 
   const [createUser] = useCreateUserMutation();
+  const [login] = useLoginMutation();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   const handleSignup = async () => {
     try {
       await createUser({ email, password });
+      const response = (await login({ email, password })) as { data: User };
+      dispatch(setAuthState({ user: response.data }));
+      navigate("/login");
     } catch (err) {
       console.error(err);
     }

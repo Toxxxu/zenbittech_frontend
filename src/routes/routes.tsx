@@ -8,7 +8,7 @@ import { HomePage } from '../pages/home.page';
 const Routes: React.FC = () => {
   return (
     <ReactRouterRoutes>
-      <Route path="*" element={<HomePage />} />
+      <Route path="/" element={<HomePage />} />
       <Route path="login" element={<LoginPage />} />
       <Route path="signup" element={<SignupPage />} />
     </ReactRouterRoutes>
