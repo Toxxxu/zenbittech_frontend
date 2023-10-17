@@ -8,20 +8,20 @@ import { LoginButton } from '../components/buttons/login-button.component';
 import { SignupButton } from '../components/buttons/signup-button.component';
 import { ButtonLink } from '../components/links/auth-link.component';
 import { Container } from '../components/containers/container.component';
-import { MainPanel } from '../components/panels/main-panel.component';
+import { MainPicture } from '../components/panels/main-picture.component';
 import { MainBox } from '../components/boxes/main-box.component';
 import { MainTitle } from '../components/titles/main-title.component';
 import { DescriptionText } from '../components/texts/description-text.component';
 import { GetStartedButton } from '../components/buttons/getstarted-button.component';
 import { SecondMainTitle } from '../components/titles/second-main-title.component';
-import { ImageTable } from '../components/boxes/image-table.component';
-import { ImageBox } from '../components/boxes/image-box.component';
-import { ImageInfoBox } from '../components/boxes/image-info-box.component';
-import { ImageTitleBox } from '../components/boxes/image-title-box.component';
-import { ImagePriceBox } from '../components/boxes/image-price-box.component';
-import { ImageYieldBox } from '../components/boxes/image-yield-box.component';
-import { ImageSoldBox } from '../components/boxes/image-sold-box.component';
-import { DaysLeft, Ticket, TicketAndDays } from '../components/boxes/image-ticket-and-days.component';
+import { ImageTable } from '../components/boxes/images/image-table.component';
+import { ImageBox } from '../components/boxes/images/image-box.component';
+import { ImageInfoBox } from '../components/boxes/images/image-info-box.component';
+import { ImageTitleBox } from '../components/boxes/images/image-title-box.component';
+import { ImagePriceBox } from '../components/boxes/images/image-price-box.component';
+import { ImageYieldBox } from '../components/boxes/images/image-yield-box.component';
+import { ImageSoldBox } from '../components/boxes/images/image-sold-box.component';
+import { DaysLeft, Ticket, TicketAndDays } from '../components/boxes/images/image-ticket-and-days.component';
 
 const HomePage: React.FC = () => {
   const [auth, setAuth] = useState(false);
@@ -60,13 +60,12 @@ const HomePage: React.FC = () => {
         </ButtonContainer>
       </Header>
       <Container>
-        <MainPanel>
-          <MainBox>
-            <MainTitle>The chemical negatively charged</MainTitle>
-            <DescriptionText>Numerous calculations predict, and experiments confirm, that the force field reflects the beam, while the mass defect is not formed. The chemical compound is negatively charged. Twhile the mass defect is</DescriptionText>
-            <GetStartedButton>Get Started</GetStartedButton>
-          </MainBox>
-        </MainPanel>
+        <MainPicture src="https://www.telegraph.co.uk/content/dam/luxury/2019/01/24/4-CORNERS-1_trans_NvBQzQNjv4BqZgEkZX3M936N5BQK4Va8RURf_Wk3V23H2268P_XkPxc.jpg" />
+        <MainBox>
+          <MainTitle>The chemical negatively charged</MainTitle>
+          <DescriptionText>Numerous calculations predict, and experiments confirm, that the force field reflects the beam, while the mass defect is not formed. The chemical compound is negatively charged. Twhile the mass defect is</DescriptionText>
+          <GetStartedButton>Get Started</GetStartedButton>
+        </MainBox>
       </Container>
       <Container>
         <ImageTable>
