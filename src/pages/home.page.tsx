@@ -13,6 +13,15 @@ import { MainBox } from '../components/boxes/main-box.component';
 import { MainTitle } from '../components/titles/main-title.component';
 import { DescriptionText } from '../components/texts/description-text.component';
 import { GetStartedButton } from '../components/buttons/getstarted-button.component';
+import { SecondMainTitle } from '../components/titles/second-main-title.component';
+import { ImageTable } from '../components/boxes/image-table.component';
+import { ImageBox } from '../components/boxes/image-box.component';
+import { ImageInfoBox } from '../components/boxes/image-info-box.component';
+import { ImageTitleBox } from '../components/boxes/image-title-box.component';
+import { ImagePriceBox } from '../components/boxes/image-price-box.component';
+import { ImageYieldBox } from '../components/boxes/image-yield-box.component';
+import { ImageSoldBox } from '../components/boxes/image-sold-box.component';
+import { DaysLeft, Ticket, TicketAndDays } from '../components/boxes/image-ticket-and-days.component';
 
 const HomePage: React.FC = () => {
   return (
@@ -36,7 +45,21 @@ const HomePage: React.FC = () => {
         </MainPanel>
       </Container>
       <Container>
-        
+        <ImageTable>
+          <SecondMainTitle>Open Deals</SecondMainTitle>
+          <ImageBox>
+            <ImageInfoBox>
+              <ImageTitleBox>The Marina Torch</ImageTitleBox>
+              <ImagePriceBox>6,500,000 Dhs</ImagePriceBox>
+              <ImageYieldBox>Yield 9.25%</ImageYieldBox>
+              <ImageSoldBox>Sold 75%</ImageSoldBox>
+              <TicketAndDays>
+                <Ticket>Ticket - 60,000 Dhs</Ticket>
+                <DaysLeft>Days left 150</DaysLeft>
+              </TicketAndDays>
+            </ImageInfoBox>
+          </ImageBox>
+        </ImageTable>
       </Container>
     </>
   );
