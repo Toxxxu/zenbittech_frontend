@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { LoginLeftPanel } from '../../panels/login-left-panel.component';
 import { LoginRightPanel } from '../../panels/login-right-panel.component';
@@ -14,8 +14,27 @@ import { StyledLink } from '../../links/auth-link.component';
 import { Container } from '../../containers/container.component';
 import { LogoBox } from '../../boxes/logo-box.component';
 import { Logo } from '../../logos/logo.component';
+import { useCreateUserMutation } from '../../../apis/users.api';
+import { useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '../../../app/hooks';
 
 const SignupForm: React.FC = () => {
+  const [email, setEmail] = useState("");
+
+  const [password, setPassword] = useState("");
+
+  const [createUser] = useCreateUserMutation();
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
+  const handleSignup = async () => {
+    try {
+      await createUser({ email, password });
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   return (
     <>
       <Header>
@@ -37,6 +56,8 @@ const SignupForm: React.FC = () => {
                 name="email"
                 placeholder="Email"
                 autoComplete="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
                 autoFocus
               />
             </InputBox>
@@ -49,9 +70,11 @@ const SignupForm: React.FC = () => {
                 placeholder="Password"
                 id="password"
                 autoComplete="current-password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
               />
             </InputBox>
-            <AuthButton>Sign Up</AuthButton>
+            <AuthButton onClick={handleSignup}>Sign Up</AuthButton>
             <StandardText>Have an account? <StyledLink to="/login">Login</StyledLink></StandardText>
           </LoginBox>
         </LoginRightPanel>
