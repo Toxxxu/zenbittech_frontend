@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { LoginLeftPanel } from '../../panels/login-left-panel.component';
 import { LoginRightPanel } from '../../panels/login-right-panel.component';
@@ -15,15 +16,13 @@ import { Container } from '../../containers/container.component';
 import { LogoBox } from '../../boxes/logo-box.component';
 import { Logo } from '../../logos/logo.component';
 import { useCreateUserMutation } from '../../../apis/users.api';
-import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '../../../app/hooks';
-import { useLoginMutation } from '../../../apis/auth.api';
 import { User } from '../../../models/User';
+import { useAppDispatch } from '../../../app/hooks';
 import { setAuthState } from '../../../slices/auth.slice';
+import { useLoginMutation } from '../../../apis/auth.api';
 
 const SignupForm: React.FC = () => {
   const [email, setEmail] = useState("");
-
   const [password, setPassword] = useState("");
 
   const [createUser] = useCreateUserMutation();
@@ -33,10 +32,11 @@ const SignupForm: React.FC = () => {
 
   const handleSignup = async () => {
     try {
-      await createUser({ email, password });
-      const response = (await login({ email, password })) as { data: User };
-      dispatch(setAuthState({ user: response.data }));
-      navigate("/login");
+      const response = (await createUser({ email, password })) as { data: User };
+      const responseLogin = (await login({ email, password })) as { data: User };
+      dispatch(setAuthState({ user: responseLogin.data }));
+      if (response.data)
+        navigate('/login');
     } catch (err) {
       console.error(err);
     }

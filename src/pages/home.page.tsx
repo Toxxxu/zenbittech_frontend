@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Header } from '../components/header/header.component';
 import { LogoBox } from '../components/boxes/logo-box.component';
@@ -24,6 +24,20 @@ import { ImageSoldBox } from '../components/boxes/image-sold-box.component';
 import { DaysLeft, Ticket, TicketAndDays } from '../components/boxes/image-ticket-and-days.component';
 
 const HomePage: React.FC = () => {
+  const [auth, setAuth] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setAuth(true);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setAuth(false);
+  };
+
   return (
     <>
       <Header>
@@ -31,8 +45,18 @@ const HomePage: React.FC = () => {
           <Logo to="/">LOGO</Logo>
         </LogoBox>
         <ButtonContainer>
-          <ButtonLink to="/login"><LoginButton>Log in</LoginButton></ButtonLink>
-          <ButtonLink to="/signup"><SignupButton>Sign Up</SignupButton></ButtonLink>
+          {auth ? ( // If authenticated, render "Log Out" button
+              <LoginButton onClick={handleLogout}>Log Out</LoginButton>
+            ) : (
+              <>
+                <ButtonLink to="/login">
+                  <LoginButton>Log in</LoginButton>
+                </ButtonLink>
+                <ButtonLink to="/signup">
+                  <SignupButton>Sign Up</SignupButton>
+                </ButtonLink>
+              </>
+            )}
         </ButtonContainer>
       </Header>
       <Container>

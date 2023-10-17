@@ -22,7 +22,6 @@ import { setAuthState } from '../../../slices/auth.slice';
 
 const LoginForm: React.FC = () => {
   const [email, setEmail] = useState("");
-
   const [password, setPassword] = useState("");
 
   const [login] = useLoginMutation();
