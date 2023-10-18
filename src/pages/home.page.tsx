@@ -22,6 +22,7 @@ import { ImagePriceBox } from '../components/boxes/images/image-price-box.compon
 import { ImageYieldBox } from '../components/boxes/images/image-yield-box.component';
 import { ImageSoldBox } from '../components/boxes/images/image-sold-box.component';
 import { DaysLeft, Ticket, TicketAndDays } from '../components/boxes/images/image-ticket-and-days.component';
+import { MainBanner } from '../components/banners/main-banner.component';
 
 const HomePage: React.FC = () => {
   const [auth, setAuth] = useState(false);
@@ -60,12 +61,14 @@ const HomePage: React.FC = () => {
         </ButtonContainer>
       </Header>
       <Container>
-        <MainPicture src="https://www.telegraph.co.uk/content/dam/luxury/2019/01/24/4-CORNERS-1_trans_NvBQzQNjv4BqZgEkZX3M936N5BQK4Va8RURf_Wk3V23H2268P_XkPxc.jpg" />
-        <MainBox>
-          <MainTitle>The chemical negatively charged</MainTitle>
-          <DescriptionText>Numerous calculations predict, and experiments confirm, that the force field reflects the beam, while the mass defect is not formed. The chemical compound is negatively charged. Twhile the mass defect is</DescriptionText>
-          <GetStartedButton>Get Started</GetStartedButton>
-        </MainBox>
+        <MainBanner>
+          <MainPicture src="https://www.telegraph.co.uk/content/dam/luxury/2019/01/24/4-CORNERS-1_trans_NvBQzQNjv4BqZgEkZX3M936N5BQK4Va8RURf_Wk3V23H2268P_XkPxc.jpg" />
+          <MainBox>
+            <MainTitle>The chemical negatively charged</MainTitle>
+            <DescriptionText>Numerous calculations predict, and experiments confirm, that the force field reflects the beam, while the mass defect is not formed. The chemical compound is negatively charged. Twhile the mass defect is</DescriptionText>
+            <GetStartedButton>Get Started</GetStartedButton>
+          </MainBox>
+        </MainBanner>
       </Container>
       <Container>
         <ImageTable>
