@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const SecondMainTitle = styled.div`
-  width: 1280px;
+  margin-top: 50px;
+  margin-left: 100px;
   height: 50px;
   color: #B29F7E;
   font-size: 28px;

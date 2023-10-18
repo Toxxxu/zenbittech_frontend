@@ -24,16 +24,37 @@ import { ImageSoldBox } from '../components/boxes/images/image-sold-box.componen
 import { DaysLeft, Ticket } from '../components/boxes/images/image-ticket-and-days.component';
 import { MainBanner } from '../components/banners/main-banner.component';
 import { FlatImageBox } from '../components/boxes/images/flat-image-box.component';
+import { useFlatsMutation } from '../apis/flats.api';
+import { Flat } from '../models/Flat';
 
 const HomePage: React.FC = () => {
   const [auth, setAuth] = useState(false);
+  const [flatsData, setFlatsData] = useState<Flat[]>([]);
+
+  const [flats] = useFlatsMutation();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
       setAuth(true);
     }
-  }, []);
+
+    const fetchFlats = async () => {
+      try {
+        const response = await flats();
+        if ('data' in response) {
+          setFlatsData(response.data);
+        } else {
+          console.error('Error fetching flats:', response.error);
+        }
+        console.log(response);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchFlats();
+  }, [flats]);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -47,7 +68,7 @@ const HomePage: React.FC = () => {
           <Logo to="/">LOGO</Logo>
         </LogoBox>
         <ButtonContainer>
-          {auth ? ( // If authenticated, render "Log Out" button
+          {auth ? (
               <LoginButton onClick={handleLogout}>Log Out</LoginButton>
             ) : (
               <>
@@ -72,25 +93,29 @@ const HomePage: React.FC = () => {
         </MainBanner>
       </Container>
       <Container>
+        <SecondMainTitle>Open Deals</SecondMainTitle>
+      </Container>
+      <Container>
         <ImageTable>
-          <SecondMainTitle>Open Deals</SecondMainTitle>
-          <ImageBox>
-            <FlatImageBox src="https://s3-alpha-sig.figma.com/img/1ad6/f5cc/a2ead523a4bef4a04f8c10ccd9bc436d?Expires=1698624000&Signature=RH8WN2MkIZrGiDfs1uF-6ybFuf2pRCAs-tivLIjbGY~UhWmNkECiSo3e9R7fgY8VjXIfvghORWW0kKEpx5NurElFzwiwJa8lTVvp9mZKq6Rtxp-Sup3~wsqbn0ky527pMQYUgwd3D~t7VL~yRiuHpcn~xnX4tNM9PwCftGvQfUEMqvp9ZUr-7BhFciQo7ZQDGTag7IgAmcQmw7iUF08-Da5VvWFUO12nd8fD6TyVN10BZz70ngghbLwwrauShU6KN9r-D1ILw7jojJShi-oWNEp0-E7fpqfR-g1zg~xR8MUyfF5p3E296NOoyg3Jd7w5YE5xR7JljHl~vKd7M2WI~Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"></FlatImageBox>
-            <ImageInfoBox>
-              <div>
-                <ImageTitleBox>The Marina Torch</ImageTitleBox>
-              </div>
-              <div>
-                <ImagePriceBox>6,500,000 Dhs</ImagePriceBox>
-                <ImageYieldBox>Yield 9.25%</ImageYieldBox>
-                <ImageSoldBox>Sold 75%</ImageSoldBox>
-              </div>
-              <div>
-                <Ticket>Ticket - 60,000 Dhs</Ticket>
-                <DaysLeft>Days left 150</DaysLeft>
-              </div>
-            </ImageInfoBox>
-          </ImageBox>
+          {flatsData.map((flat) => (
+            <ImageBox key={flat.id}>
+              <FlatImageBox src={flat.image_url} />
+              <ImageInfoBox>
+                <div>
+                  <ImageTitleBox>{flat.title}</ImageTitleBox>
+                </div>
+                <div>
+                  <ImagePriceBox>{flat.price} Dhs</ImagePriceBox>
+                  <ImageYieldBox>Yield {flat.yield}%</ImageYieldBox>
+                  <ImageSoldBox>Sold {flat.sold}%</ImageSoldBox>
+                </div>
+                <div>
+                  <Ticket>Ticket - {flat.ticket} Dhs</Ticket>
+                  <DaysLeft>Days left {flat.days_left}</DaysLeft>
+                </div>
+              </ImageInfoBox>
+            </ImageBox>
+          ))}
         </ImageTable>
       </Container>
     </>

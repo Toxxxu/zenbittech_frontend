@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const ImageBox = styled.div`
-  position: relative;
   display: flex;
+  position: relative;
+  justify-content: space-between;
+  gap: 10px;
   width: 630px;
   height: 400px;
   background-repeat: no-repeat;

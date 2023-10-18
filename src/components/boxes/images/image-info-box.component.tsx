@@ -9,6 +9,6 @@ export const ImageInfoBox = styled.div`
   flex-shrink: 0;
   border-radius: 0px 0px 5px 5px;
   opacity: 0.9;
-  margin-top: 20%;
+  margin-top: auto;
   margin-left: 20px;
 `;
