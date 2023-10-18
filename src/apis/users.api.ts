@@ -6,7 +6,7 @@ import { CreateUserRequest } from '../dto/create-user-request.dto';
 export const usersApi = createApi({
   reducerPath: "usersApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: `http://localhost:3001/users`
+    baseUrl: `https://busy-teal-cuttlefish-garb.cyclic.app/users`
   }),
   endpoints: (build) => ({
     createUser: build.mutation<User, CreateUserRequest>({

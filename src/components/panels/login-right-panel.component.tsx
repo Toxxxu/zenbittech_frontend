@@ -8,4 +8,6 @@ export const LoginRightPanel = styled.div`
   align-items: center;
   padding: 4rem;
   max-width: 25%;
+  max-height: 100%;
+  height: 100%;
 `;

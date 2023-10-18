@@ -5,7 +5,7 @@ import { Flat } from "../models/Flat";
 export const flatsApi = createApi({
   reducerPath: 'flatsApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:3001/flats'
+    baseUrl: 'https://busy-teal-cuttlefish-garb.cyclic.app/flats'
   }),
   endpoints: (build) => ({
     flats: build.mutation<Flat[], void>({

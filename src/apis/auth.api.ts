@@ -6,7 +6,7 @@ import { LoginUserRequest } from '../dto/login-user-request.dto';
 export const authApi = createApi({
   reducerPath: 'authApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:3001/auth'
+    baseUrl: 'https://busy-teal-cuttlefish-garb.cyclic.app/auth'
   }),
   endpoints: (build) => ({
     login: build.mutation<User, LoginUserRequest>({
