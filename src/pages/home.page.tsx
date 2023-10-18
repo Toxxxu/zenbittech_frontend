@@ -21,8 +21,9 @@ import { ImageTitleBox } from '../components/boxes/images/image-title-box.compon
 import { ImagePriceBox } from '../components/boxes/images/image-price-box.component';
 import { ImageYieldBox } from '../components/boxes/images/image-yield-box.component';
 import { ImageSoldBox } from '../components/boxes/images/image-sold-box.component';
-import { DaysLeft, Ticket, TicketAndDays } from '../components/boxes/images/image-ticket-and-days.component';
+import { DaysLeft, Ticket } from '../components/boxes/images/image-ticket-and-days.component';
 import { MainBanner } from '../components/banners/main-banner.component';
+import { FlatImageBox } from '../components/boxes/images/flat-image-box.component';
 
 const HomePage: React.FC = () => {
   const [auth, setAuth] = useState(false);
@@ -74,15 +75,20 @@ const HomePage: React.FC = () => {
         <ImageTable>
           <SecondMainTitle>Open Deals</SecondMainTitle>
           <ImageBox>
+            <FlatImageBox src="https://s3-alpha-sig.figma.com/img/1ad6/f5cc/a2ead523a4bef4a04f8c10ccd9bc436d?Expires=1698624000&Signature=RH8WN2MkIZrGiDfs1uF-6ybFuf2pRCAs-tivLIjbGY~UhWmNkECiSo3e9R7fgY8VjXIfvghORWW0kKEpx5NurElFzwiwJa8lTVvp9mZKq6Rtxp-Sup3~wsqbn0ky527pMQYUgwd3D~t7VL~yRiuHpcn~xnX4tNM9PwCftGvQfUEMqvp9ZUr-7BhFciQo7ZQDGTag7IgAmcQmw7iUF08-Da5VvWFUO12nd8fD6TyVN10BZz70ngghbLwwrauShU6KN9r-D1ILw7jojJShi-oWNEp0-E7fpqfR-g1zg~xR8MUyfF5p3E296NOoyg3Jd7w5YE5xR7JljHl~vKd7M2WI~Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"></FlatImageBox>
             <ImageInfoBox>
-              <ImageTitleBox>The Marina Torch</ImageTitleBox>
-              <ImagePriceBox>6,500,000 Dhs</ImagePriceBox>
-              <ImageYieldBox>Yield 9.25%</ImageYieldBox>
-              <ImageSoldBox>Sold 75%</ImageSoldBox>
-              <TicketAndDays>
+              <div>
+                <ImageTitleBox>The Marina Torch</ImageTitleBox>
+              </div>
+              <div>
+                <ImagePriceBox>6,500,000 Dhs</ImagePriceBox>
+                <ImageYieldBox>Yield 9.25%</ImageYieldBox>
+                <ImageSoldBox>Sold 75%</ImageSoldBox>
+              </div>
+              <div>
                 <Ticket>Ticket - 60,000 Dhs</Ticket>
                 <DaysLeft>Days left 150</DaysLeft>
-              </TicketAndDays>
+              </div>
             </ImageInfoBox>
           </ImageBox>
         </ImageTable>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ImageTitleBox = styled.div`
+export const ImageTitleBox = styled.h4`
   width: 216px;
   color: white;
   font-size: 20px;

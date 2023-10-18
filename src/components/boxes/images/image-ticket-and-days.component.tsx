@@ -7,7 +7,7 @@ export const TicketAndDays = styled.div`
   color: white;
 `;
 
-export const Ticket = styled.div`
+export const Ticket = styled.p`
   width: 170px;
   height: 17px;
   left: 0;
@@ -19,7 +19,7 @@ export const Ticket = styled.div`
   word-wrap: break-word;
 `;
 
-export const DaysLeft = styled.div`
+export const DaysLeft = styled.p`
   width: 170px;
   height: 17px;
   left: 230px;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ImagePriceBox = styled.div`
+export const ImagePriceBox = styled.p`
   width: 170px;
   height: 17px;
   top: 39px;

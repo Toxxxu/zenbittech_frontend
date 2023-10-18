@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ImageInfoBox = styled.div`
-  display: flex;
+  position: absolute;
   justify-content: space-between;
   align-items: center;
   width: 630px;
@@ -9,6 +9,6 @@ export const ImageInfoBox = styled.div`
   flex-shrink: 0;
   border-radius: 0px 0px 5px 5px;
   opacity: 0.9;
-  margin-top: auto;
+  margin-top: 20%;
   margin-left: 20px;
 `;

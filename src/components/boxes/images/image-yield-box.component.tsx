@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ImageYieldBox = styled.div`
+export const ImageYieldBox = styled.p`
   width: 170px;
   height: 17px;
   left: 230px;
