@@ -30,7 +30,9 @@ const SignupForm: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  const handleSignup = async () => {
+  const handleSignup = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
     try {
       const response = (await createUser({ email, password })) as { data: User };
       const responseLogin = (await login({ email, password })) as { data: User };
@@ -52,7 +54,7 @@ const SignupForm: React.FC = () => {
       <Container>
         <LoginLeftPanel />
         <LoginRightPanel>
-          <LoginBox>
+          <LoginBox onSubmit={handleSignup}>
             <LoginTitle>Sign Up</LoginTitle>
             <InputBox>
               <AuthText>Email</AuthText>
@@ -65,7 +67,8 @@ const SignupForm: React.FC = () => {
                 autoComplete="email"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
-                autoFocus
+                pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+                title="Please enter a valid email"
               />
             </InputBox>
             <InputBox>
@@ -79,9 +82,11 @@ const SignupForm: React.FC = () => {
                 autoComplete="current-password"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
+                pattern=".{8,}"
+                title="Password must be at least 8 characters long"
               />
             </InputBox>
-            <AuthButton onClick={handleSignup}>Sign Up</AuthButton>
+            <AuthButton type="submit" value="Sign Up" />
             <StandardText>Have an account? <StyledLink to="/login">Login</StyledLink></StandardText>
           </LoginBox>
         </LoginRightPanel>
